@@ -2,7 +2,7 @@
 
 /* Question 01:
 
-Your client said that he needs a dropdown, which contains all days of the running month. Sometimes we fill up a registration form that, 
+Your client said that he needs a dropdown, which contains all days of the running month. Sometimes we fill up a registration form that,
 which date of birth. So find out in google (get number of days in specific month php) and do this assignment using a for loop.
 
 Day quantity is not equal for every month. Like as - february - 28, March - 31, april - 30
@@ -17,29 +17,11 @@ $days_in_current_month = date( "t" );
 echo "Current Year is : " . $current_year . "<br>";
 echo "Running Month is : " . $current_month . "<br>";
 echo "Days in this current Month: " . $days_in_current_month . "<br><br>";
-
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Showing Date Of Birth</title>
-</head>
-<body>
-    <label>
-        <h3>Select Date Of This Month</h3>
-    </label>
-    <select name="DOB" id="dob">
-        <?php
-for ( $i = 1; $i <= date( "t" ); $i++ ) {
-    echo '<option>' . 'Day No - ' . $i . '</option>';
+echo "<h3>" . "Days in Current Month" . "</h3>";
+for ( $i = 1; $i <= date( 't' ); $i++ ) {
+    echo $i . "<br>";
 }
-?>
-</body>
-</html>
-<?php
+
 /* Question 02:
 If we print 1-100, our output will be 100 times. But this time you have print out only the odd (বিজোড়) number within 1-100.
 You have to rotate from 1 to 100.
