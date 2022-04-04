@@ -17,8 +17,10 @@ $days_in_current_month = date( "t" );
 echo "Current Year is : " . $current_year . "<br>";
 echo "Running Month is : " . $current_month . "<br>";
 echo "Days in this current Month: " . $days_in_current_month . "<br><br>";
-echo "<h3>" . "Days in Current Month" . "</h3>";
-for ( $i = 1; $i <= date( 't' ); $i++ ) {
+
+echo "<h3>" . "Days in Current Month: " . $current_month . " - " . $current_year . "</h3>";
+
+for ( $i = 1; $i <= $days_in_current_month; $i++ ) {
     echo $i . "<br>";
 }
 
