@@ -2,7 +2,8 @@
 
 /* Question 01:
 
-Your client said that he needs a dropdown, which contains all days of the running month. Sometimes we fill up a registration form that, which date of birth. So find out in google (get number of days in specific month php) and do this assignment using a for loop.
+Your client said that he needs a dropdown, which contains all days of the running month. Sometimes we fill up a registration form that, 
+which date of birth. So find out in google (get number of days in specific month php) and do this assignment using a for loop.
 
 Day quantity is not equal for every month. Like as - february - 28, March - 31, april - 30
 
@@ -20,14 +21,12 @@ echo "Days in this current Month: " . $days_in_current_month . "<br><br>";
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Showing Date Of Birth</title>
 </head>
-
 <body>
     <label>
         <h3>Select Date Of This Month</h3>
@@ -39,7 +38,6 @@ for ( $i = 1; $i <= date( "t" ); $i++ ) {
 }
 ?>
 </body>
-
 </html>
 <?php
 /* Question 02:
