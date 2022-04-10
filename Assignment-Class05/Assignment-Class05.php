@@ -32,7 +32,6 @@ foreach ( $given_arr as $value ) {
     // whereas, this program need to show only prime number, so other values are omited.
 }
 
-echo "<hr>";
 /*
 Question 02:
 
@@ -52,10 +51,8 @@ $daraz_products = [
 
 ];
 // we can see in the browser in well organised formate by
-echo "<pre>";
-print_r( $daraz_products );
-
-echo "<hr>";
+//echo "<pre>";
+//print_r( $daraz_products );
 
 /* Question 03:
 This is an array array(0,10,80,67,60,89,91,56,45,30,95,83,99)
@@ -71,7 +68,6 @@ foreach ( $arr as $value ) {
     }
 
 }
-echo "<hr>";
 
 /* Question 04:
 
