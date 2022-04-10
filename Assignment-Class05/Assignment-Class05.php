@@ -62,10 +62,11 @@ This is an array array(0,10,80,67,60,89,91,56,45,30,95,83,99)
 Find the maximum value from this array.
 Must use a foreach loop */
 
+$arr = [0, 10, 80, 67, 60, 89, 91, 56, 45, 30, 95, 83, 99];
 foreach ( $arr as $value ) {
 
     if ( $value == max( $arr ) ) {
-        echo $value;
+        echo "Maximum value of this Array = " . $value;
 
     }
 
