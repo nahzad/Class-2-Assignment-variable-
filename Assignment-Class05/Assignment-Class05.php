@@ -68,6 +68,7 @@ foreach ( $arr as $value ) {
     }
 
 }
+echo "<br>";
 
 /* Question 04:
 
