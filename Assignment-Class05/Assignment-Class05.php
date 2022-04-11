@@ -28,8 +28,8 @@ foreach ( $given_arr as $value ) {
     }
     // whereas, this program need to show only prime number, so other values are omited.
 }
-// for showing horizontal line --------------------------------------------------------------------------------------------------------
-echo "<hr>";
+
+echo "<hr>"; // for showing horizontal line --------------------------------------------------------------------------------------------------------
 /*
 Question 02:
 
@@ -57,8 +57,7 @@ foreach ( $daraz_products as $keys => $values ) {
     echo "<br>";
 }
 
-// for showing horizontal line --------------------------------------------------------------------------------------------------------
-echo "<hr>";
+echo "<hr>"; // for showing horizontal line --------------------------------------------------------------------------------------------------------
 /* Question 03:
 This is an array array(0,10,80,67,60,89,91,56,45,30,95,83,99)
 Find the maximum value from this array.
@@ -74,8 +73,7 @@ foreach ( $arr as $value ) {
 
 }
 
-// for showing horizontal line --------------------------------------------------------------------------------------------------------
-echo "<hr>";
+echo "<hr>"; // for showing horizontal line --------------------------------------------------------------------------------------------------------
 /* Question 04:
 
 Let’s traverse this array(0,10,80,67,60,89,91,56,45,30,95,83,99)
