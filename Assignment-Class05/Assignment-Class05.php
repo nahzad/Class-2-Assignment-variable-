@@ -6,10 +6,7 @@ Step 1: First let us find the factors of the given number( factors are the numbe
 Step 2: Then check the total number of factors of that number
 Step 3: Hence, If the total number of factors is more than two, it is not a prime number but a composite number. Because When a number is divisible by only one and itself, then it is a prime number.*/
 
-$given_arr = [12, 34, 2, 6, 78];
-
-// Given Array Type : Indexed Array.
-
+$given_arr = [12, 34, 2, 6, 78]; // Given Array Type : Indexed Array.
 #NOTE : condition is started from 2, because 1 doesn't meet the condition rules
 
 foreach ( $given_arr as $value ) {
@@ -20,7 +17,7 @@ foreach ( $given_arr as $value ) {
     for ( $i = 2; $i < $numbers; $i++ ) {
         if ( $numbers % $i == 0 ) {
             // if given numbers are divisible by 2 then value of flag will be 1
-            $flag = 1;
+            $flag++;
             break;
         }
 
@@ -31,7 +28,8 @@ foreach ( $given_arr as $value ) {
     }
     // whereas, this program need to show only prime number, so other values are omited.
 }
-
+// for showing horizontal line --------------------------------------------------------------------------------------------------------
+echo "<hr>";
 /*
 Question 02:
 
@@ -39,7 +37,7 @@ Let’s think about a use case, Daraz admin’s have some products for uploads o
 Go to daraz website and pick any 5 products and make your array.
 Must mention Which type of array you have made */
 
-// I have created =  Multidimensional Associative Array
+// I have created =  Multidimensional Array
 
 $daraz_products = [
 
@@ -50,10 +48,17 @@ $daraz_products = [
     'product_05' => ['product Name' => 'Havit Portable Speaker', 'speaker Type' => 'portable', 'color' => 'Red', 'price' => '930'],
 
 ];
-// we can see in the browser in well organised formate by
-//echo "<pre>";
-//print_r( $daraz_products );
 
+foreach ( $daraz_products as $keys => $values ) {
+    echo $keys . "  ";
+    foreach ( $values as $value ) {
+        echo $value . "  ";
+    }
+    echo "<br>";
+}
+
+// for showing horizontal line --------------------------------------------------------------------------------------------------------
+echo "<hr>";
 /* Question 03:
 This is an array array(0,10,80,67,60,89,91,56,45,30,95,83,99)
 Find the maximum value from this array.
@@ -68,8 +73,9 @@ foreach ( $arr as $value ) {
     }
 
 }
-echo "<br>";
 
+// for showing horizontal line --------------------------------------------------------------------------------------------------------
+echo "<hr>";
 /* Question 04:
 
 Let’s traverse this array(0,10,80,67,60,89,91,56,45,30,95,83,99)
@@ -79,10 +85,14 @@ $skip_arr = [0, 10, 80, 67, 60, 89, 91, 56, 45, 30, 95, 83, 99];
 
 foreach ( $skip_arr as $key => $val ) {
     // when we need ot print index nuber skipping next index
-    if ( $key % 2 == 0 ) {
+    if ( $key % 2 !== 0 ) {
+
+        continue;
+
+        /*Note: whereas, program needs to show only index .
+    we could print index with value using  (echo $key . " => " . $val . "<br>";)*/
+
+    } else {
         echo $key . "<br>";
-
-        // Note: whereas, program needs to show only index . we could print index with value using  (echo $key . " => " . $val . "<br>";)
-
     }
 }
