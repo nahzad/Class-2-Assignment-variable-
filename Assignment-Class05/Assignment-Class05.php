@@ -52,7 +52,7 @@ $daraz_products = [
 foreach ( $daraz_products as $keys => $values ) {
     echo $keys . "  ";
     foreach ( $values as $value ) {
-        echo $value . "  ";
+        echo " -- " . $value;
     }
     echo "<br>";
 }
