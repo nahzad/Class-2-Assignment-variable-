@@ -22,6 +22,17 @@
     <h4>Assignment No : 02</h4>
 
     <?php
+
+/*============================
+Question 02:
+==============================
+Let’s make a website which only contains our teams section.
+Now create an array of our teams at least three elements and make the our team section dynamic using php.
+
+Make an array of our teams including image
+Make a section of our team by using html css
+And dynamic the section by php*/
+
 echo "<hr>"; // showing horizontal line
 $our_team = [
 
