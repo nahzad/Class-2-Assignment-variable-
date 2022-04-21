@@ -1,0 +1,9 @@
+.fontawesome {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.fontawesome i {
+  color: #a6a7a2;
+}
