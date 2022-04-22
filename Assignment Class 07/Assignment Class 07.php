@@ -23,7 +23,7 @@
 
     <?php
 
-/*============================
+    /*============================
 Question 02:
 ==============================
 Let’s make a website which only contains our teams section.
@@ -33,16 +33,16 @@ Make an array of our teams including image
 Make a section of our team by using html css
 And dynamic the section by php*/
 
-echo "<hr>"; // showing horizontal line
-$our_team = [
+    echo "<hr>"; // showing horizontal line
+    $our_team = [
 
-    ["member_name" => "Jeffrey Rockenson", "designation" => "CEO,Founder", "thumbnail" => "media/person01.jpg"],
-    ["member_name" => "Lioyd Wilson", "designation" => "Web Designer", "thumbnail" => "media/person02.jpg"],
-    ["member_name" => "Rachel Parker", "designation" => "Web Developer", "thumbnail" => "media/person03.jpg"],
-    ["member_name" => "Ian Smith", "designation" => "Graphic Designer", "thumbnail" => "media/person04.jpg"],
+        ["member_name" => "Jeffrey Rockenson", "designation" => "CEO,Founder", "thumbnail" => "media/person01.jpg"],
+        ["member_name" => "Lioyd Wilson", "designation" => "Web Designer", "thumbnail" => "media/person02.jpg"],
+        ["member_name" => "Rachel Parker", "designation" => "Web Developer", "thumbnail" => "media/person03.jpg"],
+        ["member_name" => "Ian Smith", "designation" => "Graphic Designer", "thumbnail" => "media/person04.jpg"],
 
-];
-?>
+    ];
+    ?>
     <section id="team" class="m-5">
 
         <div class="container">
@@ -56,10 +56,10 @@ $our_team = [
                 </div>
                 <div class="row">
                     <?php
-// foreach starts here
-foreach ( $our_team as $key => $member ) {
+                    // foreach starts here
+                    foreach ($our_team as $key => $member) {
 
-    ?>
+                    ?>
                     <div class="col-lg-3">
                         <div class="card text-center shadow">
                             <img class="card-img-top rounded-circle w-100 p-3 img-fluid"
@@ -81,10 +81,10 @@ foreach ( $our_team as $key => $member ) {
 
                     <?php
 
-    //foreach ends here
-}
+                        //foreach ends here
+                    }
 
-?>
+                    ?>
 
                 </div>
             </div>
