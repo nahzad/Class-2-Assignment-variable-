@@ -1,4 +1,14 @@
 <?php
+/*
+====================================================================
+Question 01:
+
+Practice class 9
+Create a own design registration form
+Practice all things which already done in class 9
+===================================================================
+ */
+
 if ( isset( $_POST['submit'] ) ) {
     $name     = $_POST['name'];
     $email    = $_POST['email'];
