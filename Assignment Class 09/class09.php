@@ -3,9 +3,9 @@
 ====================================================================
 Question 01:
 
-Practice class 9
+Practice class 10
 Create a own design registration form
-Practice all things which already done in class 9
+Practice all things which already done in class 10
 ===================================================================
  */
 
