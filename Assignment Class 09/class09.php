@@ -9,24 +9,63 @@ Practice all things which already done in class 9
 ===================================================================
  */
 
-if ( isset( $_POST['submit'] ) ) {
+/**
+ * function for showing validation Messages 
+ */
+function validate($message, $alertType = "danger")
+{
+    return "<div class=\"alert alert-{$alertType} alert-dismissible fade show\" role=\"alert\">
+     {$message}!
+<button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>
+</div>";
+}
+
+/**
+ * function for validate Email 
+ */
+function validateEmail($email)
+{
+    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+/**
+ * filterEduMail for validate Institute email 
+ */
+
+function filterEduMail($email)
+{
+    $validEmails = ['diu.edu.bd', 'brac.edu.bd', 'nsu.edu.bd'];
+    $mail_arr    = explode('@', $email, 2);
+
+    if (in_array($mail_arr[1], $validEmails)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+if (isset($_POST['submit'])) {
     $name     = $_POST['name'];
     $email    = $_POST['email'];
-    $password = $_POST['pass'];
     $phone    = $_POST['phone'];
 
-    if ( $name == '' || $email == '' || $password == '' || $phone == '' ) {
-        echo "All fields are required";
+    if (empty($name) || empty($email) || empty($phone)) {
+        $validationMsg = validate("All fields are rquired ");
+    } elseif (validateEmail($email) == false) {
+        $validationMsg = validate("Email is not valid", "warning");
+    } elseif (filterEduMail($email) == false) {
+        $validationMsg = validate("Email is not a edu mail", "warning");
     } else {
-        echo "Name:- {$name}<br>";
-        echo "Email:- {$email}<br>";
-        echo "Password:- {$password}<br>";
-        echo "Phone:- {$phone}<br>";
+        $validationMsg = validate("Everything is ok", "success");
     }
 
     echo "<br>";
     echo "<hr>";
-
 }
 
 ?>
@@ -66,14 +105,17 @@ if ( isset( $_POST['submit'] ) ) {
 
                             <h3 class="title text-center mb-3">Registration Form</h3>
 
-                            <label class="form-label text-muted" for="name">Name : </label>
+                            <?php
+                            if (isset($validationMsg)) {
+                                echo "$validationMsg";
+                            }
+                            ?>
+
+                            <br><label class="form-label text-muted" for="name">Name : </label>
                             <input class="form-control" type="text" name="name" id="name">
 
                             <label class="form-label text-muted" for="email">Email : </label>
                             <input class="form-control" type="email" name="email" id="email">
-
-                            <label class="form-label text-muted" for="pass">Password : </label>
-                            <input class="form-control" type="Password" name="pass" id="pass">
 
                             <label class="form-label text-muted" for="phone">Phone Number : </label>
                             <input class="form-control" type="tell" name="phone" id="phone"><br><br>
