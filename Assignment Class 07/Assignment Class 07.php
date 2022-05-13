@@ -1,8 +1,38 @@
+<?php
+/*
+====================================
+Problem No: 01
+====================================
+Let’s make an exam question set (add at list 10 dummy question) like that
+$questionSet = [
+
+['question' => 'What is loream ipsum?',
+'options' => ['ans1', 'ans2', 'ans3', 'ans4']
+],
+
+['question' => 'What is loream ipsum?',
+'options' => ['ans1', 'ans2', 'ans3', 'ans4']
+],
+
+['question' => 'What is loream ipsum?',
+'options' => ['ans1', 'ans2', 'ans3', 'ans4']
+]
+
+];
+Make a simple exam design using html css
+Then make a exam by using these questions
+Your questions must be come randomize order
+*/
+
+echo "<h4>Problem NO: 01</h4>"; # for showing problem no in output page 
+?>
+
+
 <!doctype html>
 <html lang="en">
 
 <head>
-    <title>Title</title>
+    <title>Assignment Class 07</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,12 +47,106 @@
 
 <body>
 
-    <h4>Assignment No : 01 not done</h4>
-    <hr>
-    <h4>Assignment No : 02</h4>
+    <div class="wrapper ">
+        <h2 class="text-center mb-5">MCQ For Bootstrap</h2>
+        <div class="container shadow">
+            <div class="row">
+                <div class="col">
+                    <?php
+                    #Question set starts here -----------------
+                    $questionSet = [
+
+                        [
+                            'question' => 'Who developed the bootstrap?',
+                            'options' => ['James Goslign', 'Mark Jukervich', 'Dennis Ritchie', 'Mark Otto and Jacob Thornton']
+                        ],
+
+                        [
+                            'question' => 'Is Bootstrap 5 mobile-first?',
+                            'options' => ['True', 'False', 'Can\'t say', 'May be']
+                        ],
+
+                        [
+                            'question' => 'Which of the following class in Bootstrap is uesd to provide a responsive fixed width container?',
+                            'options' => ['.container-fixed', '.container-fluid', '.container', 'All of the above']
+                        ],
+                        [
+                            'question' => 'How many columns are allowed in a bootstrap grid system?',
+                            'options' => ['2', '12', '3', '5']
+                        ],
+                        [
+                            'question' => 'Which of the following class in bootstrap is used to create a big box for calling extra attention?',
+                            'options' => ['.box', '.container', '.container-fluid', '.jumbotron']
+                        ],
+                        [
+                            'question' => 'Which of the following class is used to create a black navigation bar?',
+                            'options' => ['.navbar-default', '.navbar-inverse', '.navbar-black', '.navbar-dark']
+                        ],
+                        [
+                            'question' => 'The plugin used to create a cycle through elements as a slideshow is -',
+                            'options' => ['slideshow', 'scrollspy', 'carousel', 'None of the above']
+                        ],
+                        [
+                            'question' => 'Which of the following class in Bootstrap is used to create a dropdown menu?',
+                            'options' => ['.dropdown', '.select', '.select-list', 'None of the above']
+                        ],
+                        [
+                            'question' => 'Which of the following class in bootstrap is used to create a basic list group?',
+                            'options' => ['.grouped-list', '.select-list', '.list-group', '.list-grouped']
+                        ],
+                        [
+                            'question' => 'The class used to shape an image to a circle is -',
+                            'options' => ['.img-rounded', '.img-circle', '.img-rounded', 'None of the above']
+                        ],
+
+
+                    ];
+                    #Question set ends here
+                    ?>
+
+                    <?php
+
+
+
+                    shuffle($questionSet); #using shuffle to randomise question set 
+                    #Outer foreach starts here
+                    foreach ($questionSet as $key => $questions) {
+
+                    ?>
+                    <br>
+                    <h5><?php echo 'Q' . ++$key . '. ' . $questions['question']; ?></h5>
+
+                    <?php
+
+                        $newArr = $questions['options']; #declaring newArr for itterate options as array
+                        shuffle($newArr);
+                        #Inner foreach starts
+                        foreach ($newArr as $value) {
+                        ?>
+                    <input type="radio" name="ans"> <?php echo $value; ?> <br>
+                    <?php
+                        }
+                        #Inner foreach ends here
+                        ?>
+
+
+                    <hr><!-- showing a separator line between every question set  -->
+
+                    <?php
+                    }
+                    #Outer foreach ends here
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+
+
 
     <?php
-
+    echo "<h4>Problem No : 02</h4>"; # for showing problem no in output page 
     /*============================
 Question 02:
 ==============================
