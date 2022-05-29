@@ -1,0 +1,141 @@
+
+Question 01: Practice class 13
+===========================================================
+• Create a Database name [user_information]. 
+
+• In [Users_table] 7 column:( id , username, age, phone, address, created_at, updated_at)
+
+• In [comments_table] 7 column:( id, post_title, post_details, post_file, created_at, updated_at, deleted_at )
+
+• In [comments_table] 3 column: (id, post_id, comment, created_at, updated_at, deleted_at)
+
+step 01- Make a single & multiple insert query for every table.
+
+step 02- Make a update query and also make a delete query for every table
+
+step 03- Now create a text file and write all sql query there and submit github repo link
+
+ -------------------------- END Of the Question -----------------------------------
+
+============== For creating table named user_information ====================
+
+CREATE DATABASE user_information
+
+========== First Table (Users_table) Under Database user_information  =============
+
+CREATE TABLE Users_table (
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR (60) NOT NULL,
+    age INTEGER NOT NULL,
+    phone TEXT (11) NOT NULL,
+    address TEXT (65535) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+============ Single data entry query for (Users_table) ===============
+
+INSERT INTO Users_table (username,age,phone,address,created_at,updated_at) 
+VALUES 
+('rashidul_islam',49,'987654321','Rajshahi', 2020-06-24 8:30:15, 2021-01-28 18:36:12); 
+
+// NOTE : (Here manual data(Date and time) taken for this assignment purposes)
+
+
+============ Multiple data entry query for (Users_table) ================
+
+INSERT INTO Users_table (username,age,phone,address,created_at, updated_at)
+VALUES 
+('anisul_haqe',35,965472135,'Sylhet', 1999-04-15 09:20:07,2000-02-13 14:25:56),
+('nazmul_hasan',41,963521478,'Khulna', 1997-08-29 11:31:07,2021-05-23 20:21:46),
+('ruponkar_bagchi',33,981234567,'Mymenshing', 2000-04-15 09:20:07,2000-03-13 16:25:36),
+('samia_rahman',26,954123687,'Chottogram', 2021-03-26 08:21:37,2022-04-11 16:33:47);
+
+// NOTE : (Here manual data(Date and time) taken for this assignment purposes)
+
+=========== Update query for (Users_table) ===================
+
+UPDATE Users_table SET 'rashidul_islam' = 'rashedul_islam', age = 45, WHERE id = 1;
+
+============ Delete query for (Users_table) =============
+
+DELETE FROM Users_table WHERE id = 1;
+
+------------------------------------------------- End of Users_table ----------------------------------------------------
+
+
+========== Second Table (Products_table) Under Database user_information  =============
+
+CREATE TABLE Products_table (
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    post_title TEXT (65535) NOT NULL,
+    post_details LONGTEXT (4294967295) NOT NULL,
+    post_file TEXT (65535) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    deleted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+
+);
+
+============ Single data entry query for (Products_table) ===============
+
+INSERT INTO Products_table (post_title,post_details,post_file,created_at,updated_at, deleted_at) 
+VALUES 
+('what is mysql ?',MySQL is the most popular Open Source Relational SQL database management system.,MySQL is one of the best RDBMS, 2020-06-24 8:30:15, 2021-01-28 18:36:12, 2022-04-11 16:33:47);
+
+============ Multiple data entry query for (Products_table) ================
+
+INSERT INTO Products_table (post_title,post_details,post_file,created_at,updated_at, deleted_at)
+VALUES 
+('what is phpMyAdmin ?',phpMyAdmin is one of most popular freely available tool, written in PHP, to manage MySQL and MariaDB databases over the web,MIt is also one of the most commonly used database management, 2020-06-24 8:30:15, 2021-01-28 18:36:12, 2022-04-11 16:33:47),
+
+('what is mongodb ?',MongoDB is an open-source document database and leading NoSQL database. ,MongoDB is written in C++., 2020-06-24 8:30:15, 2021-01-28 18:36:12, 2022-04-11 16:33:47);
+
+// NOTE : (Here manual data(Date and time) taken for this assignment purposes)
+
+=========== Update query for (Products_table) ===================
+
+UPDATE Products_table SET 'what is mysql' = 'What is MySQL', WHERE id = 1;
+
+============ Delete query for (Products_table) =============
+
+DELETE FROM Products_table WHERE id = 1;
+
+------------------------------------------------- End of Products_table ----------------------------------------------------
+
+=============== For creating table as (comments_table) in user_information ===============
+
+CREATE TABLE comments_table(
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    post_id INTEGER NOT NULL,
+    comment LONGTEXT (4294967295) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    deleted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+============ Single data entry query for (comments_table) ===============
+
+INSERT INTO comments_table (post_id,comment,created_at,updated_at, deleted_at) 
+VALUES 
+(01,'Hello Bangladesh',2020-06-24 8:30:15, 2021-01-28 18:36:12, 2022-04-11 16:33:47);
+
+============ Multiple data entry query for (comments_table) ================
+
+INSERT INTO comments_table (post_id,comment,created_at,updated_at, deleted_at)
+VALUES 
+(02,'Hi everyone',2020-06-24 8:30:15, 2021-01-28 18:36:12, 2022-04-11 16:33:47);
+(03,'Hello world',2020-06-24 8:30:15, 2021-01-28 18:36:12, 2022-04-11 16:33:47);
+
+// NOTE : (Here manual data(Date and time) taken for this assignment purposes)
+
+=========== Update query for (comments_table) ===================
+
+UPDATE comments_table SET 'Hello Bangladesh' = 'Welcome to Bangladesh', WHERE id = 1;
+
+============ Delete query for (comments_table) =============
+
+DELETE FROM comments_table WHERE id = 1;
+
+------------------------------------------------- End of comments_table ----------------------------------------------------
+
