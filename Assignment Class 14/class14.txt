@@ -1,0 +1,106 @@
+Assignment For Class : 14
+===========================
+
+ Create a Database name  user_information.
+
+ In Users table 5 column:  id  , username , age , phone, address, salary , country  ,created_at, updated_at
+
+ Find users who live in same country 
+
+ Show data  by high to low salary 
+
+ Show data who get the highest salary
+
+ Show data who get the lowest salary
+
+ Show how many table you have 
+
+ Show me how many users get a salary range of ( 5000 -15000).
+
+------------------------------- End of Question --------------------------------------------------------
+
+1) Create a Database name  user_information. :-
+
+CREATE DATABASE user_information
+
+==============================================================================================================
+2) In Users table 5 column:  id  , username , age , phone, address, salary , country  ,created_at, updated_at :-
+
+CREATE TABLE users (
+    id INTEGER AUTO_INCREMENT PRIMARY KEY, 
+    username VARCHAR(60) NOT NULL,
+    age INTEGER NOT NULL,
+    phone TEXT(11) NOT NULL,
+    address TEXT(1000) NOT NULL,
+    salary INTEGER NOT NULL,
+    country VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+==============================================================================================================
+3) Find users who live in same country :-
+
+MySql Query => SELECT username,country FROM users WHERE country = 'Bangladesh';
+
+Query Results will be like this:-
+---------------------------------
+nurulislam   Bangladesh
+rafikulislam Bangladesh
+
+==============================================================================================================
+4) Show data  by high to low salary :-
+
+MySql Query => SELECT id,username,country,salary FROM users ORDER BY salary DESC;
+
+Query Results will be like this:-
+---------------------------------
+1 nurulislam    Bangladesh  25000
+2 rafikulislam  Bangladesh  20000
+3 halalullabib  Pakistan    15000
+
+==============================================================================================================
+5) Show data who get the highest salary :-
+
+MySql Query => SELECT username,salary FROM users ORDER BY salary DESC LIMIT 1;
+
+// This query will show highest salary with the username
+
+Query Results will be like this:-
+---------------------------------
+nurulislam    25000
+
+==============================================================================================================
+6) Show data who get the lowest salary:-
+
+MySql Query => SELECT username,salary FROM users ORDER BY salary ASC LIMIT 1;
+
+// This query will show lowest salary with the username
+Query Results will be like this:-
+---------------------------------
+nahzadfaruk     5000
+
+==============================================================================================================
+7) Show how many table you have 
+
+MySql Query => SELECT count(*) AS TotalNumberofTabels FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'user_information';
+
+Query Results will be like this:-
+---------------------------------
+TotalNumberofTabels
+                1
+
+==============================================================================================================
+8) Show me how many users get a salary range of ( 5000 -15000).
+
+MySql Query => SELECT username,salary FROM users WHERE salary BETWEEN 5000 AND 15000 ORDER BY salary DESC;
+
+Query Results will be like this:-
+---------------------------------
+mahmudulhasan       15000
+sumenshen           10000
+raselrana           9000
+nahzadfaruk         5000   
+
+
+================================================== THE END ============================================================
