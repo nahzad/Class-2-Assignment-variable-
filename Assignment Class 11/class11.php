@@ -132,7 +132,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     echo '<b>Division : </b>' . $Division . '<br>';
     echo '<b>Education : </b>' . $educationStr . '<br>';
 
-
+    // This condition is not working here, I want to clear populated values after successfully submited .
+    //=======================================================================================================
     if (isset($_POST['submit'])) {
         if ($nameErr == "" && $userNameErr == "" && $emailErr == "" && $phoneErr == "" && $passErr == "" && $genderErr == "" && $educationErr == "") {
 
@@ -141,6 +142,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo "<h3>Thank You! You have successfully registered</h3>";
         }
     }
+    //======================================================================================================
 }
 ?>
 
