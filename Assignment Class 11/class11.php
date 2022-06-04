@@ -1,6 +1,8 @@
 <?php
-//====================
-/*Question 01: 
+
+/*
+======================
+Question 01: 
 ======================
 
 Practice class 11
@@ -129,13 +131,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     echo '<b>Gender :</b> ' . $gender . '<br>';
     echo '<b>Division : </b>' . $Division . '<br>';
     echo '<b>Education : </b>' . $educationStr . '<br>';
+
+
+    if (isset($_POST['submit'])) {
+        if ($nameErr == "" && $userNameErr == "" && $emailErr == "" && $phoneErr == "" && $passErr == "" && $genderErr == "" && $educationErr == "") {
+
+            $_POST = "";
+
+            echo "<h3>Thank You! You have successfully registered</h3>";
+        }
+    }
 }
-
 ?>
-
-
-
-
 
 
 <!DOCTYPE html>
@@ -281,10 +288,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
     </div>
-
-
-
-
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
