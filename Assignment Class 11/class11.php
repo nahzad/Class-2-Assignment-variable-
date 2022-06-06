@@ -1,4 +1,18 @@
 <?php
+echo "<pre>";
+print_r($_POST);
+echo "</pre>";
+
+?>
+
+
+
+
+
+
+
+
+<?php
 
 /*
 ======================
@@ -124,25 +138,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $education = $_POST['education'];
         $educationStr = implode(", ", $education);
     }
-    echo '<b>Name :</b> ' . $name . '<br>';
-    echo '<b>User Name :</b> ' . $userName . '<br>';
-    echo '<b>Email :</b> '  . $email . '<br>';
-    echo '<b>Phone :</b> ' . $phone . '<br>';
-    echo '<b>Gender :</b> ' . $gender . '<br>';
-    echo '<b>Division : </b>' . $Division . '<br>';
-    echo '<b>Education : </b>' . $educationStr . '<br>';
-
-    // This condition is not working here, I want to clear populated values after successfully submited .
-    //=======================================================================================================
-    if (isset($_POST['submit'])) {
-        if ($nameErr == "" && $userNameErr == "" && $emailErr == "" && $phoneErr == "" && $passErr == "" && $genderErr == "" && $educationErr == "") {
-
-            $_POST = "";
-
-            echo "<h3>Thank You! You have successfully registered</h3>";
-        }
-    }
-    //======================================================================================================
 }
 ?>
 
@@ -283,10 +278,34 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
 
 
-            <br><br><input type="submit" value="Submit" class="btn btn-primary">
+            <br><br><input type="submit" name="submit" value="Submit" class="btn btn-primary">
 
 
         </form>
+        <?php
+        if (isset($_POST['submit'])) {
+            if ($nameErr == "" && $userNameErr == "" && $emailErr == "" && $phoneErr == "" && $passErr == "" && $genderErr == "" && $educationErr == "") {
+
+                $_POST = [];
+
+                echo "<h3>Thank You! You have successfully registered</h3>";
+                echo "<h3> Your Input : </h3>";
+                echo '<b>Name :</b> ' . $name . '<br>';
+                echo '<b>User Name :</b> ' . $userName . '<br>';
+                echo '<b>Email :</b> '  . $email . '<br>';
+                echo '<b>Phone :</b> ' . $phone . '<br>';
+                echo '<b>Gender :</b> ' . $gender . '<br>';
+                echo '<b>Division : </b>' . $Division . '<br>';
+                echo '<b>Education : </b>' . $educationStr . '<br>';
+            }
+        }
+
+
+        ?>
+
+
+
+
 
 
     </div>
