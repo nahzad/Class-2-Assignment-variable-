@@ -1,0 +1,74 @@
+/*Create a Database name  information.
+	Create two table  User and User_details and join both of them with inner join,
+	
+	Left join , right join use sql query
+
+	Now create a text file and submit*/
+
+================================================ END OF QUESTION ==========================
+
+	-- MySql Query for creating table users:-
+
+CREATE TABLE Users(
+
+	id INT NOT NULL AUTO_INCREMENT,
+	name VARCHAR(50) NOT NULL,
+	email VARCHAR(100) NOT NULL,
+	address INT NOT NULL,
+    PRIMARY KEY (id),
+	FOREIGN KEY(address) REFERENCES users_information (cid)
+);
+
+
+	-- Insert data Query for users table :-
+
+INSERT INTO users (name,email,address) 
+VALUES 
+('Rafikul Islam','rafikul@gmail.com',1),
+('Shihab Shohan','shihab@gmail.com',3),
+('Nilufar Yeasmin','nyeasmin@gmail.com',5),
+('Ataur Rahman','arahman@gmail.com'8);
+
+
+	-- MySql Query for creating table users_information:-
+	
+CREATE TABLE users_information(
+
+	cid INT NOT NULL AUTO_INCREAMENT,
+	city VARCHAR(40) NOT NULL,
+	PRIMARY KEY (cid)
+
+);
+
+	-- Insert data Query for users_information table :-
+
+INSERT INTO Users_information(city)
+VALUES
+('Dhaka'),('Rajshahi'),('Barishal'),('Sylhet'),('Khulna'),('Chottogram'),('Mymenshing'),('Rangpur');
+
+======================================================================================================
+
+ -- INNER JOIN Query with all column :-
+
+SELECT * FROM users u JOIN users_information ui ON u.address = ui.cid;
+
+ -- LEFT JOIN Query with all column :-
+
+SELECT * FROM users LEFT JOIN users_information ON users.address = users_information.cid;
+
+ -- RIGHT JOIN Query with all column :-
+
+SELECT * FROM users RIGHT JOIN users_information ON users.address = users_information.cid;
+
+=========================================================================================================
+ -- INNER JOIN Query with selected column :-
+ 
+SELECT u.id,u.name,u.email,ui.city FROM users u JOIN users_information ui ON u.address = ui.cid;
+
+ -- LEFT JOIN Query with selected column :-
+
+SELECT u.id,u.name,u.email,ui.city FROM users u LEFT JOIN users_information ui ON u.address = ui.cid;
+
+ -- RIGHT JOIN Query with selected column:-
+
+SELECT u.id,u.name,u.email,ui.city FROM users u RIGHT JOIN users_information ui ON u.address = ui.cid;
